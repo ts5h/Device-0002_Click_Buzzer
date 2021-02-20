@@ -86,8 +86,8 @@ void main(void)
     time(&toc);
     srand((int)toc);
     
-    unsigned char oldIsClick = 0;
     unsigned char isClick = 0;
+    unsigned char oldIsClick = 0;
     unsigned int dur = 0;
     unsigned int delay = 0;
     unsigned int dutyValue = 0;
@@ -101,16 +101,16 @@ void main(void)
         {
             delay = (rand() % 4 + 1) * 125;
             dur = (rand() % 8 + 1) * 31;
-            dutyValue = 174;
+            dutyValue = 349;
         }
         else
         {
             delay = (rand() % 16 + 1) * 31;
-            dur = 4;
+            dur = 8;
             dutyValue = 499;
             
             if (oldIsClick > 0) {
-                delay -= 4;
+                delay -= dur;
             }
         }
         

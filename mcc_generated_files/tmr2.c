@@ -67,8 +67,8 @@ void TMR2_Initialize(void)
 {
     // Set TMR2 to the options selected in the User Interface
 
-    // PR2 124; 
-    PR2 = 0x7C;
+    // PR2 249; 
+    PR2 = 0xF9;
 
     // TMR2 0; 
     TMR2 = 0x00;
@@ -153,15 +153,15 @@ void TMR2_DefaultInterruptHandler(void){
     // add your TMR2 interrupt custom code
     // or set custom function using TMR2_SetInterruptHandler()
     
-    // LED on every 500ms
-    if (cnt < 2) { // 8ms
+    // LED on every 500ms (504ms)
+    if (cnt < 2) {
         LED_OUT_SetHigh();
     } else {
         LED_OUT_SetLow();
     }
     
     cnt++;
-    if (cnt >= 125) {
+    if (cnt >= 63) {
         cnt = 0;
     }
 }
