@@ -81,10 +81,8 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-    // Random
-    time_t toc;
-    time(&toc);
-    srand((int)toc);
+    // Random Seed by using ADC result
+    srand(ADC_GetConversion(RND_IN));
     
     unsigned char isClick = 0;
     unsigned char oldIsClick = 0;
